@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<title>Same Game - HTML5 canvas demo</title>
+<style>
+html {
+  background: #000;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  color: #fff;
+  min-width: 600px;
+  min-height: 400px;
+}
+
+a {
+  color: #EA7066;
+}
+a:hover {
+  color: #FFB6B0;
+}
+
+#sameGame, #sameGameBack {
+  padding: 0;
+}
+#sameGame {
+  z-index: 1;
+}
+#sameGameBack {
+  position: absolute;
+  z-index: -1;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+li {
+  display: inline;
+  margin: 0 10px;
+}
+
+#error {
+  clear: both;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+  width: 50%;
+  background: #500;
+  color: #F99;
+  text-align: center;
+}
+
+#error p {
+  padding: 10px;
+  margin: 0;
+}
+
+#optionsContainer {
+  padding: 4px 0 2px 4px;
+  float: left;
+  border: 4px solid #13232C;
+  background-color: #0E3B57;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  position: relative;
+  top: -5px;
+}
+#footer {
+  position: absolute;
+  top: 100%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  margin-top: -25px;
+}
+
+</style>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="game.js"></script>
+
+<body>
+  <div id="optionsContainer">
+    <ul id="options">
+      <li>
+        <label for="animation">Activate animation: </label>
+        <input id="animation" type="checkbox" checked="checked"/>
+      </li>
+      <li>
+        <label>Colors number: </label>
+        <select id="colorNumber"></select>
+      </li>
+      <li>
+        <label>Grid size: </label>
+        <select id="gridSize">
+          <option>15x10</option>
+          <option>20x15</option>
+          <option>30x20</option>
+          <option>40x30</option>
+        </select>
+      </li>
+    </ul>
+  </div>
+  <div id="error">
+    <p><noscript>Please enable javascript.</noscript></p>
+  </div>
+  <div id="gameContainer" style="display: none;">
+    <canvas id="sameGame" width="400" height="300"></canvas>
+    <canvas id="sameGameBack" width="400" height="300"></canvas>
+  </div>
+  <div id="footer">
+    <span>grenlibre.fr - HTML5 canvas demo - <a href="http://blog.grenlibre.fr/2010/02/the-same-game-in-html5-canvas">Back to the blog</a> - <a href="http://blog.grenlibre.fr/2010/02/the-same-game-in-html5-canvas#respond">Give feedback</a></span>
+  </div>
+</body>
+
