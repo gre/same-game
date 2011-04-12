@@ -14,6 +14,7 @@ body {
   color: #fff;
   min-width: 600px;
   min-height: 400px;
+  overflow: hidden;
 }
 
 a {
@@ -78,11 +79,53 @@ li {
   margin-top: -25px;
 }
 
+#popup {
+  opacity: 0;
+  z-index: -2;
+  border-radius: 20px;
+  background: black;
+  border: 2px solid #EA7066;
+  padding: 5px 10px;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  -moz-transition: 1s z-index;
+  -webkit-transition: 1s z-index;
+  transition: 1s z-index;
+  box-shadow: 0px 3px 10px black;
+  -moz-box-shadow: 0px 3px 10px black;
+  -webkit-box-shadow: 0px 3px 10px black;
+}
+#popup.active {
+  opacity: 1;
+  z-index: 100;
+}
+#popup .close {
+  text-decoration: none;
+  float: right;
+  font-weight: bold;
+}
+#popup img {
+  border-top: 2px solid #EA7066;
+}
+#popup h1 {
+  margin: 5px;
+  font-size: 1.2em;
+}
+
 </style>
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="game.js"></script>
 
 <body>
+  <div id="popup">
+    <a href="#" class="close">close</a>
+    <h1>Like this game ?</h1>
+    <a href="http://grenlibre.fr/same/" target="_blank"><img width="100%" src="same-android.jpg" /></a>
+  </div>
+  
   <div id="optionsContainer">
     <ul id="options">
       <li>
@@ -96,6 +139,7 @@ li {
       <li>
         <label>Grid size: </label>
         <select id="gridSize">
+          <option>10x7</option>
           <option>15x10</option>
           <option>20x15</option>
           <option>30x20</option>

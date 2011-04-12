@@ -26,6 +26,17 @@
 (function(){
   var game = window.game = {};
   
+  var popupClosed = false;
+  var hidePopup = function() {
+    popupClosed = true;
+    $('#popup').removeClass('active');
+  }
+  var showPopup = function() {
+    if(popupClosed) return;
+    $('#popup').addClass('active');
+  }
+  $('#popup .close').live('click', hidePopup);
+  
 /// game.Grid ///
   
   /**
@@ -659,6 +670,7 @@
       ctx.fillText(text,(canvasSize.w-ctx.measureText(text).width)/2,canvasSize.h/2);
       setCursor(true);
       $(canvas).one('click', newgame);
+      setTimeout(showPopup, 1000);
     };
     
     return {
