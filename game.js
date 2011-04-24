@@ -670,7 +670,6 @@
       ctx.fillText(text,(canvasSize.w-ctx.measureText(text).width)/2,canvasSize.h/2);
       setCursor(true);
       $(canvas).one('click', newgame);
-      setTimeout(showPopup, 1000);
     };
     
     return {

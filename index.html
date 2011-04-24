@@ -87,10 +87,8 @@ li {
   border: 2px solid #EA7066;
   padding: 5px 10px;
   position: absolute;
-  top: 25%;
-  left: 25%;
-  width: 50%;
-  height: 50%;
+  top: 50px;
+  left: 50px;
   -moz-transition: 1s z-index;
   -webkit-transition: 1s z-index;
   transition: 1s z-index;
@@ -114,16 +112,29 @@ li {
   margin: 5px;
   font-size: 1.2em;
 }
+#popup .play {
+  text-align: center;
+}
+#popup .play a {
+  font-size: 1.4em;
+  font-weight: bold;
+  text-decoration: none;
+}
 
 </style>
 <script type="text/javascript" src="jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="game.js"></script>
 
 <body>
-  <div id="popup">
+  <div id="popup" class="active">
     <a href="#" class="close">close</a>
     <h1>Like this game ?</h1>
-    <a href="http://grenlibre.fr/same/" target="_blank"><img width="100%" src="same-android.jpg" /></a>
+    <p class="play">
+    <a href="http://grenlibre.fr/same" target="_blank">Play the Android game!</a>
+    </p>
+    <div>
+      <object width="425" height="344"><param name="movie" value="http://www.youtube.com/v/Qyd69g9hmIY?hl=en&fs=1"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/Qyd69g9hmIY?hl=en&fs=1" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="344"></embed></object>
+    </div>
   </div>
   
   <div id="optionsContainer">
